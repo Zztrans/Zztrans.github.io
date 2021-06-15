@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/flower_32px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/flower_16px.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zztrans.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="同济校赛，又没做出来几道题，体验不好，又是沮丧自闭的一天呢。虽说据说D题数据出锅行列有反的？也确实卡到我了，赛后看$90%$多点的case通过率。赛时过不了，修过数据赛后同样代码就过了？感觉自己补的题好像也挺多，咋就长进不大呢？思维能力不行呀？  难受~  还是没有代码的一篇题解~  代码牛客上多的是~     链接“科大讯飞杯”第十七届同济大学程序设计预选赛暨高校网络友谊赛  A 两人博弈，从$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5.11同济">
+<meta property="og:url" content="https://zztrans.github.io/2020/05/11/5-11/index.html">
+<meta property="og:site_name" content="ZzTraNs">
+<meta property="og:description" content="同济校赛，又没做出来几道题，体验不好，又是沮丧自闭的一天呢。虽说据说D题数据出锅行列有反的？也确实卡到我了，赛后看$90%$多点的case通过率。赛时过不了，修过数据赛后同样代码就过了？感觉自己补的题好像也挺多，咋就长进不大呢？思维能力不行呀？  难受~  还是没有代码的一篇题解~  代码牛客上多的是~     链接“科大讯飞杯”第十七届同济大学程序设计预选赛暨高校网络友谊赛  A 两人博弈，从$">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-11T05:26:46.000Z">
+<meta property="article:modified_time" content="2020-06-14T14:57:12.585Z">
+<meta property="article:author" content="Zztrans">
+<meta property="article:tag" content="综合">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zztrans.github.io/2020/05/11/5-11/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>5.11同济 | ZzTraNs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ZzTraNs</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不定期更新~</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">18</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zztrans.github.io/2020/05/11/5-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Zztrans">
+      <meta itemprop="description" content="Have A try!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZzTraNs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          5.11同济
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-11 13:26:46" itemprop="dateCreated datePublished" datetime="2020-05-11T13:26:46+08:00">2020-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-14 22:57:12" itemprop="dateModified" datetime="2020-06-14T22:57:12+08:00">2020-06-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/11/5-11/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/5-11/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>同济校赛，又没做出来几道题，体验不好，又是沮丧自闭的一天呢。<br>虽说据说D题数据出锅行列有反的？<br>也确实卡到我了，赛后看$90%$多点的case通过率。赛时过不了，修过数据赛后同样代码就过了？<br>感觉自己补的题好像也挺多，咋就长进不大呢？<br>思维能力不行呀？</p>
+<blockquote>
+<p>难受~</p>
+<blockquote>
+<p>还是没有代码的一篇题解~</p>
+<blockquote>
+<p>代码牛客上多的是~</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="https://ac.nowcoder.com/acm/contest/5477" target="_blank" rel="noopener">“科大讯飞杯”第十七届同济大学程序设计预选赛暨高校网络友谊赛</a></p>
+<hr>
+<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><ul>
+<li>两人博弈，从$1到n$数中，一人选$a$，一人选$b$，然后只能从剩下集合中找$a+b$或者$a-b$加入集合，谁无法$move$谁输。问你先手是否必胜.</li>
+<li><p>原来我还是不懂$exgcd$，没有第一时间想到能被$a$和$b$线性表示的$c$，即$ax+by=c$必须满足$c$是$gcd(a,b)$的倍数。</p>
+</li>
+<li><p>然后只需判断$n/gcd(a,b)$的奇偶性就可以了。</p>
+</li>
+</ul>
+<hr>
+<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><ul>
+<li><p>赛里没深入想的题，就是直线上$n$个点，有各自的距离$p_i$，和最晚达到时间$t_i$，有一个起点$t_i=0$，问你这些点全部走过所需要花费的最短时间。</p>
+</li>
+<li><p>$n=1000$，是个经典的$n^2$的$dp$数据范围？赛时能想到dp的话或许就会着手做了…</p>
+</li>
+<li><p>不难发现对一个区间来说，你走完这个区间，最优的情况，只会有终点停在左端点，或者停在右端点两种情况，难道你还折返回中间停白白浪费时间吗…</p>
+</li>
+<li><p>然后就可以敲一个$n^2$的$dp$，$dp[l][r][0]$表示走完$[l,r]$区间停在左，$dp[l][r][1]$表示走完停在右。</p>
+</li>
+</ul>
+<hr>
+<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><ul>
+<li><p>$h$行$w$列地图，控制小车车，最多$4$辆，类似滑冰，$move$是上下左右不碰车不碰障碍和墙壁不停，能否在$k,k&lt;=5$步内控制至少一辆小车车到其中一个目标点。一步只能控制一辆车。</p>
+</li>
+<li><p>第一眼看了，肯定是个搜索题，$4$辆车一次$4$种$move$，最多$k=5$也就是$16^5$个状态，是可控的，但感觉不好写，也就不敢写，后来过的人越来越多，我就开始写起来了。(下面一段为我自己比赛里的混乱做法)</p>
+</li>
+<li><p>然后陷入$bfs$怪圈，因为题目给的$k$，队列先进先出经典步数，我就想着要用bfs，然后也成功将最多$4$个小车，$8$个行列信息(因为$w&lt;=10,h&lt;=10$，正好$0$到$9$压)压成一个$int$数，进行$bfs$，实在要考虑的挺多，特别是压完要提取行列信息，要不能车碰车，这里写烦了很多。虽然赛后数据正确的情况下是可以过的，但也是我路走窄了~</p>
+</li>
+<li><p>实际上，$bfs$要维护小车状态信息，其实就是地图。我一开始不知道地图上小车的移动变化怎么处理。其实就可以考虑直接在原地图上改，就将地图作为状态进行$dfs$即可。小车合法的移动进行地图上元素的$swap$，回溯$swap$回来就可以了。</p>
+</li>
+<li><p>这样写实在不要太优雅了！可惜比赛里想不到$dfs$按步数控制深度$swap$地图元素。</p>
+</li>
+</ul>
+<hr>
+<h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><ul>
+<li><p>比赛里也看了，也差不多找到似乎能按一点连线拆分为子问题。但其实就是卡特兰数的一个递推式。以前一直没学$Catalan$数，只能怪自己喽…</p>
+</li>
+<li><p>题意就是给你圆上$2n$个点，两点连边构成弦，求弦不相交的概率。</p>
+</li>
+<li><p>然后学了卡特兰数之后就会发现合法的匹配是个经典问题，两点配对嘛。</p>
+</li>
+<li><p>记$f(n)$为$2n$个点的合法匹配数。</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">f(n)=f(0)f(n-0-1)+...+f(i)f(n-i-1)+...f(n-0-1)f(0)</script><ul>
+<li><p>就可以理解为当前选这个点和某个点匹配，剩下的拆分为两个子问题，乘法原理结合加法原理得到答案。</p>
+</li>
+<li><p>概率就是$合法方案数/总方案数$，总方案采用$(2n-1)!!$或者组合数两个两个取计算，最后除掉$n$的排列都可以，因为要保证弦连接形态各异。</p>
+</li>
+</ul>
+<hr>
+<h1 id="J"><a href="#J" class="headerlink" title="J"></a>J</h1><ul>
+<li><p>求$\sum_{i=1}^n{i^kfib(i)}$，给定$n$，$k$，求这个式子取模后的答案。</p>
+</li>
+<li><p>牛逼式子我不会…</p>
+</li>
+<li><p>$n$很大，到$1e18$，$k&lt;=100$。但比赛里，做 就 硬 做。</p>
+</li>
+<li><p>感觉这种题，不会就跳过了应该…</p>
+</li>
+<li><p>$n$这么大，肯定是个能较快回答的东西，然后考虑线性递推。(纯口胡</p>
+</li>
+<li><p>抄了$lls$的$BM$的板子，但得学啊…可能牵连着得学拉格朗日插值来着…</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>还有两个题比赛好像也读了，可能下次再补…</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%BC%E5%90%88/" rel="tag"># 综合</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/02/5-2/" rel="prev" title="5.2西工大">
+      <i class="fa fa-chevron-left"></i> 5.2西工大
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/19/5-19/" rel="next" title="5.19近期一些题目小结">
+      5.19近期一些题目小结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C"><span class="nav-number">3.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D"><span class="nav-number">4.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E"><span class="nav-number">5.</span> <span class="nav-text">E</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#J"><span class="nav-number">6.</span> <span class="nav-text">J</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zztrans"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zztrans</p>
+  <div class="site-description" itemprop="description">Have A try!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zztrans" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zztrans" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/2438362589@qq.com" title="E-Mail → 2438362589@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友情链接~
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://cubercsl.cn/" title="https:&#x2F;&#x2F;cubercsl.cn&#x2F;" rel="noopener" target="_blank">学长传说CSL</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://plalyy.github.io/" title="https:&#x2F;&#x2F;plalyy.github.io&#x2F;" rel="noopener" target="_blank">图论带师yygg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zyqbill.github.io/" title="https:&#x2F;&#x2F;zyqbill.github.io&#x2F;" rel="noopener" target="_blank">全能神Bill-zhao</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-Zztrans"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zztrans</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">32k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">29 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'v4KlDfS6hCPcEIQvuzGOzNQw-gzGzoHsz',
+      appKey     : 'RNR15XdBR0qN9gyMaR9IPNdd',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/flower_32px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/flower_16px.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zztrans.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="感慨上礼拜的比赛一个接一个，简直$overwhelming$！ 但不乏一些好题，加上我平时做的一些，记录一下思维。  题有点多，看题情况不一定贴代码，总结一下题意，分析一下思路。   1icpc18焦作D. Keiichi Tsuchiya the Drift King  题意：一辆长方形$a*b$小车准备要通过一个扇形甬道，扇形圆心角$d$，半径为$r$，要求永远保持长方形右下角和扇形正切，且车">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5.19近期一些题目小结">
+<meta property="og:url" content="https://zztrans.github.io/2020/05/19/5-19/index.html">
+<meta property="og:site_name" content="ZzTraNs">
+<meta property="og:description" content="感慨上礼拜的比赛一个接一个，简直$overwhelming$！ 但不乏一些好题，加上我平时做的一些，记录一下思维。  题有点多，看题情况不一定贴代码，总结一下题意，分析一下思路。   1icpc18焦作D. Keiichi Tsuchiya the Drift King  题意：一辆长方形$a*b$小车准备要通过一个扇形甬道，扇形圆心角$d$，半径为$r$，要求永远保持长方形右下角和扇形正切，且车">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-19T11:26:11.000Z">
+<meta property="article:modified_time" content="2020-06-14T14:57:18.213Z">
+<meta property="article:author" content="Zztrans">
+<meta property="article:tag" content="综合">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zztrans.github.io/2020/05/19/5-19/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>5.19近期一些题目小结 | ZzTraNs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ZzTraNs</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不定期更新~</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">18</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zztrans.github.io/2020/05/19/5-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Zztrans">
+      <meta itemprop="description" content="Have A try!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZzTraNs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          5.19近期一些题目小结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-19 19:26:11" itemprop="dateCreated datePublished" datetime="2020-05-19T19:26:11+08:00">2020-05-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-14 22:57:18" itemprop="dateModified" datetime="2020-06-14T22:57:18+08:00">2020-06-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/19/5-19/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/19/5-19/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="感慨"><a href="#感慨" class="headerlink" title="感慨"></a>感慨</h1><p>上礼拜的比赛一个接一个，简直$overwhelming$！</p>
+<p>但不乏一些好题，加上我平时做的一些，记录一下思维。</p>
+<blockquote>
+<p>题有点多，看题情况不一定贴代码，总结一下题意，分析一下思路。</p>
+</blockquote>
+<hr>
+<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><a href="https://codeforces.com/gym/102028/problem/D" target="_blank" rel="noopener">icpc18焦作D. Keiichi Tsuchiya the Drift King</a></p>
+<ul>
+<li><p>题意：一辆长方形$a*b$小车准备要通过一个扇形甬道，扇形圆心角$d$，半径为$r$，要求永远保持长方形右下角和扇形正切，且车厢不能甩出去，问你最少的宽度为多少。</p>
+</li>
+<li><p>比赛里读题没注意到正切相切，导致我很晕。完全不知道他在干嘛，第一个读，却没着手做或者给队友正反馈，反映了我读题太急，应该慢慢来，读懂。</p>
+</li>
+<li><p>然后我赛后补了一下，发现情况还是很好推的，就两种$case$。</p>
+</li>
+<li><p>1.圆心角转化为弧度制大于等于$arctan(\frac{b}{a+r})$，这种情况十分简单，直接勾股定理就解决了。</p>
+</li>
+<li><p>2.小于，此时左上角落不在圆弧部分中，落在一开始的矩形轨道中，利用好正切性质，垂直可以推出很多角都是圆心角。我是考虑分成三段来计算，水平的那一条分三段即可。公式如下，注意d为转化弧度后的。</p>
+<script type="math/tex; mode=display">
+(b-(a+r)*tan(d))*sin(d)+\frac{a}{cos(d)}+(\frac{r}{cos(d)}-r)</script></li>
+</ul>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p><a href="http://uoj.ac/contest/53/problem/519" target="_blank" rel="noopener">A. 【美团杯2020】查查查乐乐</a></p>
+<ul>
+<li><p>$jls$出的签到题都让我自闭。</p>
+</li>
+<li><p>题意：给定串$s$包含$x$、$l$两种字符，问你最少的修改次数，使得该串不含$xxxll$的子序列。</p>
+</li>
+<li><p>题里给的串长很小，只有$100$，但实际上可以做到线性的$dp$算法。然而问题是完全想不到高复杂度的别的暴力做法。</p>
+</li>
+<li><p>实际上对于这类给定某个不算长的目标序列，让他出现，或者不让他出现，都可以考虑$dp$，因为你一旦某一位修改，前面的状态会影响后面的，往这方面想就完事了。</p>
+</li>
+<li><p>$dp[i][l]$ 表示到第$i$个字符，前面出现包含$xxxll$长度为$l$的前缀子序列所需的最小修改次数。</p>
+</li>
+<li><p>分两种$case$来转移。记$xxxll$为$ss$，下标从$1$开始。</p>
+</li>
+<li><p>1.$s[i]==ss[l+1]$，此时有两种选择，要么不改这一位，直接转移到前缀序列增长，即$dp[i][l+1]=min(dp[i-1][l],dp[i][l+1])$，要么改这一位，还是同长度，但用一次，即$dp[i][l]=min(dp[i-1][l]+1,dp[i][l])$。</p>
+</li>
+<li><p>2.$s[i]!=ss[l+1]$，此时直接从$dp[i-1][l]$转移即可。</p>
+</li>
+<li><p>答案就是$dp[n][0]$到$dp[n][4]$中最小的，因为不希望出现完整出现$xxxll$的子序列。</p>
+<p>理解的这么细，希望类似的题能多多触类旁通吧。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) cout &lt;&lt; #x &lt;&lt; <span class="meta-string">": "</span> &lt;&lt; x &lt;&lt; endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">2e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="keyword">char</span> ss[<span class="number">10</span>]=<span class="string">"$xxxll"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;s+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> n=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;dp(n+<span class="number">1</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">5</span>,inf));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">0</span>;l&lt;<span class="number">5</span>;++l) dp[<span class="number">0</span>][l]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">0</span>;l&lt;<span class="number">5</span>;++l)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i]==ss[l+<span class="number">1</span>])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(l+<span class="number">1</span>==<span class="number">5</span>) <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">else</span> dp[i][l+<span class="number">1</span>]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][l],dp[i][l+<span class="number">1</span>]);</span><br><span class="line">                    dp[i][l]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][l]+<span class="number">1</span>,dp[i][l]);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dp[i][l]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][l],dp[i][l]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans=inf;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">0</span>;l&lt;<span class="number">5</span>;++l) ans=<span class="built_in">min</span>(ans,dp[n][l]);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+</blockquote>
+<hr>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p><a href="http://uoj.ac/contest/53/problem/531" target="_blank" rel="noopener">M. 【美团杯2020】最长公共子序列</a></p>
+<ul>
+<li>算第二简单的题？学弟好强啊，已经差不多想到了正解了。</li>
+<li>题意：交互题，长度最多$100$的未知串，不超过$650$次询问，每次询问可以问你给出的串和未知串的$lcs$，叫你写程序找出这个串。</li>
+<li>可以通过不断问两个数来确定这个序列，一旦是正确的，$lcs$会返回$2$，一旦不是正确的，$lcs$会返回$1$，可以说明谁在后面，在后面的让他的次数$+1$，可以理解为有多少数在他前面，最后每个数的前面有多少数字就是他的位置。</li>
+<li>很棒的思维！以上就是学弟给出的$n^2$做法，能过$small$。</li>
+<li>而正解实际上就是注意到$n=100,q=650$，经典$nlog_2n$，所以只需要再排序的时候询问就可以了！然后注意$sort$不稳定，小数据会采用别的$n^2$排序方法，可以用stable_sort或者自己写归并。</li>
+</ul>
+<hr>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p><a href="https://ac.nowcoder.com/acm/contest/5759/E" target="_blank" rel="noopener">E.[ 兰德索尔的瞭望塔]</a></p>
+<ul>
+<li>题意：给定$x$轴上一个点，还有$n$个点，他们分别与原点还有$x$轴上点能构成三角形，求最多的能套在一个三角形内的总数量，套在内部的三角形不允许与外部三角形之间边有重叠。</li>
+<li>很明显是个二维$LIS$，但我叉积判方向以及二分替换规则什么的搞不太来。</li>
+<li>做法是先一种以叉积大小排序，保证下一些所有点都在当前点同侧，在跟$LIS$一样维护一个向量集，二分查找替换更优秀的，替换比较的时候用另一种叉积反向，使得新加进来的向量都原向量的另一个方向内，就实现了一个三角形，一左一右就控制住了点在大三角形内。</li>
+<li>以上均为抽象理解。实际上需要控制共线等等非常麻烦的东西。牛客上的数据不能保证一定正确，实际上我找到了已过程序的$hack$数据，所以我还是觉得自己没有掌握，迷迷糊糊的。</li>
+</ul>
+<hr>
+<blockquote>
+<p>好累啊，写不动了溜了溜了，先这样吧。</p>
+<blockquote>
+<p>还好多题呢，看来只能下次一定了。</p>
+<blockquote>
+<p>我感觉我写的太细了……</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%BC%E5%90%88/" rel="tag"># 综合</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/11/5-11/" rel="prev" title="5.11同济">
+      <i class="fa fa-chevron-left"></i> 5.11同济
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/21/5-21/" rel="next" title="5-21-近期题">
+      5-21-近期题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#感慨"><span class="nav-number">1.</span> <span class="nav-text">感慨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1"><span class="nav-number">2.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">3.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">4.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">5.</span> <span class="nav-text">4</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zztrans"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zztrans</p>
+  <div class="site-description" itemprop="description">Have A try!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zztrans" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zztrans" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/2438362589@qq.com" title="E-Mail → 2438362589@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友情链接~
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://cubercsl.cn/" title="https:&#x2F;&#x2F;cubercsl.cn&#x2F;" rel="noopener" target="_blank">学长传说CSL</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://plalyy.github.io/" title="https:&#x2F;&#x2F;plalyy.github.io&#x2F;" rel="noopener" target="_blank">图论带师yygg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zyqbill.github.io/" title="https:&#x2F;&#x2F;zyqbill.github.io&#x2F;" rel="noopener" target="_blank">全能神Bill-zhao</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-Zztrans"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zztrans</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">32k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">29 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'v4KlDfS6hCPcEIQvuzGOzNQw-gzGzoHsz',
+      appKey     : 'RNR15XdBR0qN9gyMaR9IPNdd',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+</html>

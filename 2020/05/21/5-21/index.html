@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/flower_32px.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/flower_16px.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zztrans.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="这几天补的一些题。  随意贴代码，总结一下题意，分析一下思路。   119 ec-final H-king  问你是否存在长度不少于$\frac{n}{2}$的以某数为公比(模意义下)的子序列，存在则输出长度。  $lls$说的乱搞题……乍一看没法下手。需要注意到长度不少于$\frac{n}{2}$，那么最小的间隔不能超过$3$的。  于是就可以$map$或$unordered$统计每个数和他后面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-21-近期题">
+<meta property="og:url" content="https://zztrans.github.io/2020/05/21/5-21/index.html">
+<meta property="og:site_name" content="ZzTraNs">
+<meta property="og:description" content="这几天补的一些题。  随意贴代码，总结一下题意，分析一下思路。   119 ec-final H-king  问你是否存在长度不少于$\frac{n}{2}$的以某数为公比(模意义下)的子序列，存在则输出长度。  $lls$说的乱搞题……乍一看没法下手。需要注意到长度不少于$\frac{n}{2}$，那么最小的间隔不能超过$3$的。  于是就可以$map$或$unordered$统计每个数和他后面">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-21T15:55:46.000Z">
+<meta property="article:modified_time" content="2020-06-22T05:42:14.428Z">
+<meta property="article:author" content="Zztrans">
+<meta property="article:tag" content="综合">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zztrans.github.io/2020/05/21/5-21/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>5-21-近期题 | ZzTraNs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ZzTraNs</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不定期更新~</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">18</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zztrans.github.io/2020/05/21/5-21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Zztrans">
+      <meta itemprop="description" content="Have A try!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZzTraNs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          5-21-近期题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-21 23:55:46" itemprop="dateCreated datePublished" datetime="2020-05-21T23:55:46+08:00">2020-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-22 13:42:14" itemprop="dateModified" datetime="2020-06-22T13:42:14+08:00">2020-06-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/21/5-21/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/21/5-21/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这几天补的一些题。</p>
+<blockquote>
+<p>随意贴代码，总结一下题意，分析一下思路。</p>
+</blockquote>
+<hr>
+<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><a href="https://ac.nowcoder.com/acm/contest/3732/H" target="_blank" rel="noopener">19 ec-final H-king</a></p>
+<ul>
+<li><p>问你是否存在长度不少于$\frac{n}{2}$的以某数为公比(模意义下)的子序列，存在则输出长度。</p>
+</li>
+<li><p>$lls$说的乱搞题……乍一看没法下手。需要注意到长度不少于$\frac{n}{2}$，那么最小的间隔不能超过$3$的。</p>
+</li>
+<li><p>于是就可以$map$或$unordered$统计每个数和他后面两个的公比。</p>
+</li>
+<li><p>最后可以通过计算取最好情况，一部分让他全是间隔为$1$，剩下的间隔为$3$，答案至少需要出现$\frac{n}{5}$次。</p>
+</li>
+<li><p>以上这个数字可能不一定精确，取更小点也似乎没事，我取$\frac{n}{8}$也过了？$\frac{n}{7}$过不了。</p>
+</li>
+<li><p>然后对可疑的答案用$unordered$来$dp$，然后这里我从前往后$dp$会$WA$穿，只能从后往前统计？</p>
+</li>
+<li><p>好玄学。锻炼卡常技巧…也可能牛客机子的锅。</p>
+</li>
+<li><p>还有种做法是随机，取到$\frac{n}{2}$序列中的数的期望会越来越高，也差不多就可以做。</p>
+<blockquote>
+<p>啥时候做做随机的题呢。随机的题都好有趣啊！</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p><a href="https://ac.nowcoder.com/acm/problem/205370" target="_blank" rel="noopener">小V的序列</a></p>
+<ul>
+<li><p>技巧性很强的一道题。我愿称之为绝活。</p>
+</li>
+<li><p>题意，给定一个序列的第一个元素，然后通过一个乱序位运算往后递推得到$n$个数的序列，数的大小都在$ull$内，对每次询问，给出一个$y$，问你有没有序列中的和$y$相似，相似定义为不一样的位置小于等于$3$，最终根据满足相似的$y$位置输出一个数。</p>
+</li>
+<li><p>第一反应打表找规律，可惜这个序列确保是乱的，没什么规律好找。</p>
+</li>
+<li><p>正解需要注意到为啥是小于等于$3$？因为一旦你把一个数分成$4$块，那相似的话至少得有一块是完全一致的！</p>
+</li>
+<li><p>于是就分成四块，$64$位数每$16$位一块，开个$[1&lt;&lt;16][4]$的数组，对原序列暴力划分，每一部分都搞出来，每一块每个数，都保存原来的那个数。</p>
+</li>
+<li><p>然后对于每个询问的数，依然四块划分，每一块的每个数，可以轻松找到可疑的数，然后判断就可以了。</p>
+</li>
+<li><p>复杂度我证不来。有个写题解说，因为数据随机，可以看成每一块每一个元素出现的次数相等，单次期望比较次数为$O(\frac{4n}{2^{16}})$，每个数拆成4块，分到$2^{16}$个坑里，有道理噢。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) cout &lt;&lt; #x &lt;&lt; <span class="meta-string">": "</span> &lt;&lt; x &lt;&lt; endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function">ull <span class="title">G</span><span class="params">(ull x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x^=x&lt;&lt;<span class="number">13</span>;</span><br><span class="line">    x^=x&gt;&gt;<span class="number">7</span>;</span><br><span class="line">    x^=x&lt;&lt;<span class="number">17</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1</span>&lt;&lt;<span class="number">16</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">vector</span>&lt;ull&gt;d[N][<span class="number">4</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">divide</span><span class="params">(ull x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;++i)</span><br><span class="line">        d[(x&gt;&gt;(<span class="number">16</span>*i))&amp;(N<span class="number">-1</span>)][i].push_back(x);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">(ull y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k=(y&gt;&gt;(<span class="number">16</span>*i))&amp;(N<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;u:d[k][i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(__builtin_popcountll(u^y)&lt;=<span class="number">3</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    ull x;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%llu"</span>,&amp;x);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        divide(x);</span><br><span class="line">        x=G(x);</span><br><span class="line">    &#125;</span><br><span class="line">    ull ans=<span class="number">0</span>;</span><br><span class="line">    ull y;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%llu"</span>,&amp;y);</span><br><span class="line">        ans=(ans*<span class="number">2</span>+calc(y))%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>绝活题。</p>
+</blockquote>
+<hr>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p><a href="https://ac.nowcoder.com/acm/problem/205044" target="_blank" rel="noopener">小V和gcd树</a></p>
+<ul>
+<li><p>完全拿来复习树链剖分了。就是$n$个带权结点的树，边权为两点$gcd$，支持操作单点修改，区间查询$a$到$b$路径上权值不超过$k$的边的数量。</p>
+</li>
+<li><p>由于这题$nq$才$4e8$，题目给了$8s$，就是时间很宽松。</p>
+</li>
+<li><p>而后续查询我也没用更快的权值线段树，不超过一个值，经典权值线段树(其实是太久没用不想捡)。而是同条重链上暴力一个一个询问过去的…然后好像也很优秀，就$400ms$，树剖+权值线段树好像可以做到$200ms$</p>
+</li>
+<li><p>做法是，先树链剖分，修改点权的时候只改自己和父亲的边权，如果有重儿子的话改一下边权(轻儿子是查询时只跳一步的，我们可以用到再确定)。查询的时候，也是经典的树链剖分查询，对同条重链暴力按$dfn$序依次查，轻儿子那里算个$gcd$单独算。</p>
+</li>
+<li><p>复杂度我又分析不来。除非树特别丑，单次询问会达到$O(n)$，否则口胡一个$O(log_2nlog_2n)$，$gcd$和树剖重链上结点数量。</p>
+<blockquote>
+<p>至少树链剖分的部分需要完全理解吧！</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p><a href="https://ac.nowcoder.com/acm/problem/206048" target="_blank" rel="noopener">环鸽的数列</a></p>
+<ul>
+<li><p>给定$n$个数$a_i$，支持两种操作，区间加类$fib$数列，分别从$f_{l-l+1}$加到$f_{r-l+1}$。区间查询模意义下区间和。</p>
+</li>
+<li><p>懵逼树下你和我。之后补了一个晚上加一个早上吧大概，有两种做法，各学一种。</p>
+</li>
+<li><p>一种是维护矩阵，线段树每个结点都矩阵，然后计算出前缀和，对应区间先把前缀和加上去，同时给区间左端计一个$lazy$为$f_{l-L+1}$，下放的时候，同样给对应左右区间加上对应的前缀和，当然要进行相应的递推偏移变化。以上全是对矩阵进行的操作。比较好理解。</p>
+</li>
+<li><p>第二种做法是推$fib$的通项，需要一些矩阵特征值的知识？然后可以写成一个式子，然后拆开来，分别是带根号的一个等比数列，然后只需要知道根号在模意义下是什么。</p>
+</li>
+<li><p>根号模意义下可以搞成它的二次剩余。然后就把二次剩余代替它。然后维护线段树区间加等比数列就行了。这样每个线段树结点都是个数，会快很多！</p>
+</li>
+<li><p>至于线段树区间加等比数列，我感觉你会了矩阵的维护以后，两个其实是差不多的。都是区间先加上整个和，就是等比数列求和公式，然后左端点记一个相对于当前区间的首项的$lazy$，下放的时候去更新左右各自的值和$lazy$，相应的递推即可。</p>
+</li>
+<li><p>二次剩余可以用板子跑出来，我可妹看懂那一大堆证明…</p>
+</li>
+<li><p>然后写题解起来轻松，实际不好调…不好写，我是照着喵哥哥的板子抄的，需要把模板搞得好一点。</p>
+</li>
+<li><p>还有$cf446c$，$cf718b$，前者几乎一样，但数据量更大，矩阵方法过不去(md要是过去了我就不学二次剩余了)。后者更简单一些~都可以作为习题。</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>近期做的较综合的题或者$trick$的题都在这里了？</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%BC%E5%90%88/" rel="tag"># 综合</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/19/5-19/" rel="prev" title="5.19近期一些题目小结">
+      <i class="fa fa-chevron-left"></i> 5.19近期一些题目小结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/24/5-24-1/" rel="next" title="5-24-1-游族杯D">
+      5-24-1-游族杯D <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zztrans"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zztrans</p>
+  <div class="site-description" itemprop="description">Have A try!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zztrans" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zztrans" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/2438362589@qq.com" title="E-Mail → 2438362589@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友情链接~
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://cubercsl.cn/" title="https:&#x2F;&#x2F;cubercsl.cn&#x2F;" rel="noopener" target="_blank">学长传说CSL</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://plalyy.github.io/" title="https:&#x2F;&#x2F;plalyy.github.io&#x2F;" rel="noopener" target="_blank">图论带师yygg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zyqbill.github.io/" title="https:&#x2F;&#x2F;zyqbill.github.io&#x2F;" rel="noopener" target="_blank">全能神Bill-zhao</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-Zztrans"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zztrans</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">32k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">29 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'v4KlDfS6hCPcEIQvuzGOzNQw-gzGzoHsz',
+      appKey     : 'RNR15XdBR0qN9gyMaR9IPNdd',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+</html>
